@@ -29,6 +29,7 @@ public class MainServer
     static boolean flag2 = true;
     static boolean flag3 = false;
 
+    //photohandler class is responsible for receiving and sending images
     public class PhotoServer implements Runnable
     {
 
