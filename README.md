@@ -28,6 +28,6 @@ java MainServer
 
 ### Built With
 
-** Java **
-** Swing Framework **
-** NetBeans IDE 8.1 **
+* Java 
+* Swing Framework 
+* NetBeans IDE 8.1 
