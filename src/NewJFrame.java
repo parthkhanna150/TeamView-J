@@ -1,4 +1,4 @@
-
+//this is the client side
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Desktop;
