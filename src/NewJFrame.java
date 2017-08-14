@@ -1,4 +1,4 @@
-//this is the client side
+
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Desktop;
@@ -13,6 +13,8 @@ import java.awt.event.MouseListener;
 import java.io.*;
 import java.net.*;
 import java.util.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -35,7 +37,6 @@ public class NewJFrame extends javax.swing.JFrame {
     public NewJFrame() {
 //        int i=0;
         setLayout(null);
-        setVisible(true);
         initComponents();
 
         //meomoeies to the component is to be given after the init components
@@ -45,6 +46,8 @@ public class NewJFrame extends javax.swing.JFrame {
         setResizable(false);
         tm = new MyTableModel();
         tb1.setModel(tm);
+        setVisible(true);
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -131,18 +134,34 @@ public class NewJFrame extends javax.swing.JFrame {
     }
     private void bt1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt1ActionPerformed
 
-        //on the click of the button we give add the ip available in the network 
-        //a string value is passed and it ia varied accordingly
+        try {
+            //on the click of the button we give add the ip available in the network
+            //a string value is passed and it ia varied accordingly
 //        String s = JOptionPane.showInputDialog(rootPane, "Enter the IP range");
 //        String s= "192.168.16.";
 //        for (int i = 0; i <= 255; i++) {
 //            Client obj = new Client(s + i);
 //            bt1.setEnabled(false);
-        String s = "172.16.1.";
-        for (int i = 0; i <= 255; i++) {
-            Client obj = new Client(s + i);
-            bt1.setEnabled(false);
-            //we have disabled the button on one click of the button  
+            String ip = JOptionPane.showInputDialog("Enter server ip address");
+
+            
+            
+            if (ip == null || ip.equals("") || ip.indexOf(".") == -1) {
+
+            } else {
+                ip = ip.substring(0, ip.lastIndexOf(".")+1);
+                String s = ip;
+                System.out.println(s);
+                for (int i = 0; i <= 255; i++) {
+                    Client obj = new Client(s + i);
+                    bt1.setEnabled(false);
+                    //we have disabled the button on one click of the button  
+                }
+            }
+
+//       
+        } catch (Exception ex) {
+            Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_bt1ActionPerformed
 
