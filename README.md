@@ -1,3 +1,12 @@
-Software built purely in Java that mimics the popular TeamViewer software
+# TeamView-J
 
-Use of concepts such as Networking, GUI, Multi-threading etc
+The desktop application mimics TeamViewer's core idea primarily. But it does so completely in Java. Built using socket programming and a multithread architecture, this repo hold both client side of the app and the server side. 
+
+## Prerequisites
+
+Needs JRE (or JDK) installed
+
+### Used
+
+* Java
+* Swing
