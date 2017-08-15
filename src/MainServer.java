@@ -87,7 +87,7 @@ public class MainServer
                 {
                     while (flag)
                     {
-                        File f = new File("Downloads/screenshots");
+                        File f = new File("Downloads/screenshots/");
                         if (f.exists() == false)
                         {
                             f.mkdir();
