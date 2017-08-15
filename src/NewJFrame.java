@@ -223,7 +223,7 @@ public class NewJFrame extends javax.swing.JFrame {
                 int i = 0;
                 while (true) {
 
-                    FileOutputStream fos = new FileOutputStream("Downloads/screenshots" + i + ".jpg");
+                    FileOutputStream fos = new FileOutputStream("Downloads/screenshots/" + i + ".jpg");
                     //before sending the photos the server sends the size of the image 
                     //which is equal to the size of the screen 
                     double height = dis.readDouble();
@@ -256,9 +256,9 @@ public class NewJFrame extends javax.swing.JFrame {
                     dos.writeBytes("Received\r\n");
                     fos.close();
                     obj1.jLabel2.setPreferredSize(new Dimension((int) width, (int) height));
-                    obj1.jLabel2.setIcon(new ImageIcon("Downloads/screenshots" + i + ".jpg"));
+                    obj1.jLabel2.setIcon(new ImageIcon("Downloads/screenshots/" + i + ".jpg"));
 
-                    File f = new File("Downloads/screenshots" + i + ".jpg");
+                    File f = new File("Downloads/screenshots/" + i + ".jpg");
                     f.delete();
                     i++;
                 }
@@ -354,11 +354,11 @@ public class NewJFrame extends javax.swing.JFrame {
                         String fn = dis.readLine();
                         long size = dis.readLong();
 
-                        File f = new File("Desktop/downloaded_files");
+                        File f = new File("Desktop/downloaded_files/");
                         if (!f.exists()) {
                             f.mkdir();
                         }
-                        FileOutputStream fos = new FileOutputStream("Desktop/downloaded_files" + fn);
+                        FileOutputStream fos = new FileOutputStream("Desktop/downloaded_files/" + fn);
                         int l;
                         int count = 0;
                         byte b[] = new byte[1000000];
@@ -375,7 +375,7 @@ public class NewJFrame extends javax.swing.JFrame {
                         int n = JOptionPane.showConfirmDialog(null, "DO YOU WANT TO PLAY IT");
 //                        JOptionPane.showMessageDialog(null, "FILE DOWNLOADED SUCCEFULLY");
                         if (n == JOptionPane.YES_OPTION) {
-                            Desktop.getDesktop().open(new File("Desktop/downloaded_files" + fn));
+                            Desktop.getDesktop().open(new File("Desktop/downloaded_files/" + fn));
                         }
                     } else if (s.equalsIgnoreCase("server closed")) {
                         JOptionPane.showMessageDialog(null, "SERVER SWITCHED OFF");
