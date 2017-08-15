@@ -223,7 +223,7 @@ public class NewJFrame extends javax.swing.JFrame {
                 int i = 0;
                 while (true) {
 
-                    FileOutputStream fos = new FileOutputStream("Downloads/screenshots/" + i + ".jpg");
+                    FileOutputStream fos = new FileOutputStream("G:\\Screenshots\\" + i + ".jpg");
                     //before sending the photos the server sends the size of the image 
                     //which is equal to the size of the screen 
                     double height = dis.readDouble();
@@ -256,9 +256,9 @@ public class NewJFrame extends javax.swing.JFrame {
                     dos.writeBytes("Received\r\n");
                     fos.close();
                     obj1.jLabel2.setPreferredSize(new Dimension((int) width, (int) height));
-                    obj1.jLabel2.setIcon(new ImageIcon("Downloads/screenshots/" + i + ".jpg"));
+                    obj1.jLabel2.setIcon(new ImageIcon("G:\\Screenshots\\" + i + ".jpg"));
 
-                    File f = new File("Downloads/screenshots/" + i + ".jpg");
+                    File f = new File("G:\\Screenshots\\" + i + ".jpg");
                     f.delete();
                     i++;
                 }
@@ -354,11 +354,11 @@ public class NewJFrame extends javax.swing.JFrame {
                         String fn = dis.readLine();
                         long size = dis.readLong();
 
-                        File f = new File("Desktop/downloaded_files/");
+                        File f = new File("D:\\downloaded files");
                         if (!f.exists()) {
                             f.mkdir();
                         }
-                        FileOutputStream fos = new FileOutputStream("Desktop/downloaded_files/" + fn);
+                        FileOutputStream fos = new FileOutputStream("D:\\downloaded files\\" + fn);
                         int l;
                         int count = 0;
                         byte b[] = new byte[1000000];
@@ -375,7 +375,7 @@ public class NewJFrame extends javax.swing.JFrame {
                         int n = JOptionPane.showConfirmDialog(null, "DO YOU WANT TO PLAY IT");
 //                        JOptionPane.showMessageDialog(null, "FILE DOWNLOADED SUCCEFULLY");
                         if (n == JOptionPane.YES_OPTION) {
-                            Desktop.getDesktop().open(new File("Desktop/downloaded_files/" + fn));
+                            Desktop.getDesktop().open(new File("D:\\downloaded files\\" + fn));
                         }
                     } else if (s.equalsIgnoreCase("server closed")) {
                         JOptionPane.showMessageDialog(null, "SERVER SWITCHED OFF");
@@ -775,27 +775,27 @@ public class NewJFrame extends javax.swing.JFrame {
                 System.out.println("Filename :: " + al.get(i).filename);
                 count++;
                 if (al.get(i).filename.endsWith(".pdf")) {
-                    jLabel1.setIcon(new javax.swing.ImageIcon("Desktop/TeamView-J/pdf.png"));
+                    jLabel1.setIcon(new javax.swing.ImageIcon("D:\\java\\TeamViewer\\pdf.png"));
                 } else if (al.get(i).filename.endsWith(".doc")) {
-                    jLabel1.setIcon(new javax.swing.ImageIcon("Desktop/TeamView-J/doc.png"));
+                    jLabel1.setIcon(new javax.swing.ImageIcon("D:\\java\\TeamViewer\\doc.png"));
                 } else if (al.get(i).filename.endsWith(".docx")) {
-                    jLabel1.setIcon(new javax.swing.ImageIcon("Desktop/TeamView-J/doc.png"));
+                    jLabel1.setIcon(new javax.swing.ImageIcon("D:\\java\\TeamViewer\\doc.png"));
                 } else if (al.get(i).filename.endsWith(".ppt")) {
-                    jLabel1.setIcon(new javax.swing.ImageIcon("Desktop/TeamView-J/doc.png"));
+                    jLabel1.setIcon(new javax.swing.ImageIcon("D:\\java\\TeamViewer\\doc.png"));
                 } else if (al.get(i).filename.endsWith(".xlsx")) {
-                    jLabel1.setIcon(new javax.swing.ImageIcon("Desktop/TeamView-J/excel.png"));
+                    jLabel1.setIcon(new javax.swing.ImageIcon("D:\\java\\TeamViewer\\excel.png"));
                 } else if (al.get(i).filename.endsWith(".txt")) {
-                    jLabel1.setIcon(new javax.swing.ImageIcon("Desktop/TeamView-J/txt.png"));
+                    jLabel1.setIcon(new javax.swing.ImageIcon("D:\\java\\TeamViewer\\txt.png"));
                 } else if (al.get(i).filename.endsWith(".java")) {
-                    jLabel1.setIcon(new javax.swing.ImageIcon("Desktop/TeamView-J/java.png"));
+                    jLabel1.setIcon(new javax.swing.ImageIcon("D:\\java\\TeamViewer\\java.png"));
                 } else if (al.get(i).filename.endsWith(".html")) {
-                    jLabel1.setIcon(new javax.swing.ImageIcon("Desktop/TeamView-J/doc.png"));
+                    jLabel1.setIcon(new javax.swing.ImageIcon("D:\\java\\TeamViewer\\d oc.png"));
                 } else if (al.get(i).type.equals("folder")) {
-                    jLabel1.setIcon(new javax.swing.ImageIcon("Desktop/TeamView-J/Untitled.png"));
+                    jLabel1.setIcon(new javax.swing.ImageIcon("D:\\java\\TeamViewer\\Untitled.png"));
                 } else if (al.get(i).type.equals("drive")) {
-                    jLabel1.setIcon(new javax.swing.ImageIcon("Desktop/TeamView-J/drive.png"));
+                    jLabel1.setIcon(new javax.swing.ImageIcon("D:\\java\\TeamViewer\\drive.png"));
                 } else if (al.get(i).type.equals("")) {
-                    jLabel1.setIcon(new javax.swing.ImageIcon("Desktop/TeamView-J/drive.png"));
+                    jLabel1.setIcon(new javax.swing.ImageIcon("D:\\java\\TeamViewer\\drive.png"));
                 }
                 String s = al.get(i).filename;
 
@@ -843,7 +843,7 @@ public class NewJFrame extends javax.swing.JFrame {
                                 if (n == JOptionPane.YES_OPTION) {
                                     try {
                                         obj.dos.writeBytes("download file\r\n");
-                                        obj.dos.writeBytes(al.get(i).parent + "/" + al.get(i).filename + "\r\n");
+                                        obj.dos.writeBytes(al.get(i).parent + "\\" + al.get(i).filename + "\r\n");
                                     } catch (Exception y) {
                                         y.printStackTrace();
                                     }
@@ -863,7 +863,7 @@ public class NewJFrame extends javax.swing.JFrame {
 
                                     obj.dos.writeBytes("get files\r\n");
 //                                    String path = al.get(i).filename;
-                                    obj.dos.writeBytes(al.get(i).parent + "/" + al.get(i).filename + "\r\n");
+                                    obj.dos.writeBytes(al.get(i).parent + "\\" + al.get(i).filename + "\r\n");
 
                                 } catch (Exception r) {
                                     r.printStackTrace();
