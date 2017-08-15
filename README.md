@@ -15,9 +15,22 @@ git clone https://github.com/parthkhanna150/TeamView-J.git
 ```
 Or simply download zip. 
 
-The repo consists of one JAR file which is to be used in client-side. So the person with the parent laptop i.e. the server-side (who wants to share his/her screen) needs to 
 
-Thereafter, in the dist folder 
+The person with the parent laptop i.e. the server-side (who wants to share his/her screen) first needs to type the following command in the terminal:
+
+```
+javac MainServer.java
+
+java MainServer
+```
+
+The repo consists of one JAR file which is to be used in client-side. Type this to run it: 
+```
+java -jar ClientSide.jar
+```
+Alternatively, in the dist folder, you will find a JAR file which you can double-click and open.
+
+Thereafter you can send messages across computers from the client and use the parent laptop’s screen. Enjoy.
 
 ### Used
 
