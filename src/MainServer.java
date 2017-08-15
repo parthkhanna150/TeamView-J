@@ -87,7 +87,7 @@ public class MainServer
                 {
                     while (flag)
                     {
-                        File f = new File("F:\\screenshots");
+                        File f = new File("Downloads/screenshots");
                         if (f.exists() == false)
                         {
                             f.mkdir();
@@ -97,8 +97,8 @@ public class MainServer
                         dos.writeDouble(d.getWidth());
                         Robot rbt = new Robot();
                         BufferedImage bimg = rbt.createScreenCapture(new Rectangle(d));
-                        ImageIO.write(bimg, "jpg", new File("F:\\screenshots\\" + i + ".jpg"));
-                        f = new File("F:\\screenshots\\" + i + ".jpg");
+                        ImageIO.write(bimg, "jpg", new File("Downloads/screenshots/" + i + ".jpg"));
+                        f = new File("Downloads/screenshots/" + i + ".jpg");
                         FileInputStream fis = new FileInputStream(f);
                         dos.writeLong(f.length());
                         int k = 0;
